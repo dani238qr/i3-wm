@@ -9,7 +9,10 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+#Alt -mod1
 set $mod Mod1
+
+#Win -mod4
 set $mod2 Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -63,10 +66,14 @@ bindsym $mod+f exec i3-sensible-terminal -e ranger
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start browser
+#firefox
 bindsym $mod2+g exec firefox
+
+#brave browser
 #bindsym $mod+g exec brave
 
 # lock screen
+#set background
 bindsym  $mod2+l exec i3lock -i ~/Pictures/wallpapers/wallpaper.png
 
 # kill focused window
