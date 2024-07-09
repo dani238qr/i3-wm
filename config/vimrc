@@ -1,10 +1,16 @@
+set secure
+"set colorcolumn=110
+set expandtab
+
 set nu
 set mouse=a
 syntax on
 filetype on
 set nolist
+"open Explore tab with Ctrl+t
 inoremap <C-t> :tabnew<CR>:Explore<CR>
 set tabstop=4
 
+"copy to system clipboard with Ctrl+c
 vmap <C-c> "+yi
 
