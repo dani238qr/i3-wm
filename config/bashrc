@@ -1,0 +1,22 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
+alias night='sct'
+alias neofetch='neofetch | lolcat'
+alias sensors='sensors | lolcat'
+alias ll='tree -L 1 | lolcat'
+alias la='tree -L 1 -a | lolcat'
+alias uptime='uptime | lolcat'
+alias top='top | lolcat'
+alias lastreboot='last reboot | lolcat'
+alias lsa='tree | lolcat'
+
+
