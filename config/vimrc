@@ -1,1 +1,10 @@
+set nu
+set mouse=a
+syntax on
+filetype on
+set nolist
+inoremap <C-t> :tabnew<CR>:Explore<CR>
+set tabstop=4
+
+vmap <C-c> "+yi
 
