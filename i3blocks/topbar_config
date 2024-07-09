@@ -1,0 +1,7 @@
+# ~/.config/i3blocks/topbar_config
+
+[centered_time]
+command=~/.config/i3blocks/centered_time.sh
+interval=1
+align=center
+
