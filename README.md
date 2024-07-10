@@ -16,16 +16,16 @@ A comprehensive shell script for setting up the i3 window manager and related to
 ## Usage
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/i3-setup-script.git
-    cd i3-setup-script
+    git clone https://github.com/dani238qr/i3-wm
+    cd i3-wm
     ```
 2. Make the script executable:
     ```sh
-    chmod +x setup.sh
+    chmod +x install.sh
     ```
 3. Run the script as root or with sudo:
     ```sh
-    sudo ./setup.sh
+    sudo ./install.sh
     ```
 
 ## License
