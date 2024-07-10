@@ -156,7 +156,7 @@ replace_configs() {
 append_custom_bashrc() {
     local script_dir=$1
     local user_home=$(eval echo ~${SUDO_USER})
-    local custom_bashrc="$user_home/i3wm_config/config/bashrc"
+    local custom_bashrc="config/bashrc"
 
     if [ -f "$custom_bashrc" ]; then
         cat "$custom_bashrc" >> "$user_home/.bashrc"
@@ -171,7 +171,7 @@ append_custom_bashrc() {
 append_custom_vimrc() {
     local script_dir=$1
     local user_home=$(eval echo ~${SUDO_USER})
-    local custom_vimrc="$home_user/i3wm_config/config/vimrc"
+    local custom_vimrc="config/vimrc"
 
     if [ -f "$custom_vimrc" ]; then
         cat "$custom_vimrc" > "$user_home/.vimrc"
