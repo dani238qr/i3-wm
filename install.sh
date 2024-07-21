@@ -32,20 +32,20 @@ install_packages() {
         apt)
             apt-get update
             apt-get install -y i3 i3status i3lock suckless-tools gnome-terminal vim-gtk3
-            apt-get install -y neofetch lolcat lm-sensors ranger gnome-browser-connector tree lightdm lightdm-gtk-greeter i3blocks feh rofi btop mousepad
+            apt-get install -y neofetch lolcat lm-sensors ranger gnome-browser-connector tree lightdm lightdm-gtk-greeter i3blocks feh rofi btop mousepad flameshot
             apt-get update
             ;;
         pacman)
             pacman -Sy
-            pacman -S --noconfirm i3-wm i3status i3lock suckless-tools neofetch lolcat lm-sensors ranger firefox tree lightdm lightdm-gtk-greeter i3blocks gnome-terminal vim-gtk3 feh rofi btop mousepad
+            pacman -S --noconfirm i3-wm i3status i3lock suckless-tools neofetch lolcat lm-sensors ranger firefox tree lightdm lightdm-gtk-greeter i3blocks gnome-terminal vim-gtk3 feh rofi btop mousepad flameshot
             pacman -Sy
             ;;
         dnf)
-            dnf install -y i3 i3status i3lock suckless-tools neofetch lolcat lm-sensors ranger firefox tree lightdm lightdm-gtk-greeter i3blocks vim-gtk3 gnome-terminal feh rofi btop mousepad
+            dnf install -y i3 i3status i3lock suckless-tools neofetch lolcat lm-sensors ranger firefox tree lightdm lightdm-gtk-greeter i3blocks vim-gtk3 gnome-terminal feh rofi btop mousepad flameshot
             ;;
         zypper)
             zypper refresh
-            zypper install -y i3 i3status i3lock suckless-tools neofetch lolcat lm-sensors ranger firefox tree lightdm lightdm-gtk-greeter i3blocks vim-gtk3 gnome-terminal feh mousepad
+            zypper install -y i3 i3status i3lock suckless-tools neofetch lolcat lm-sensors ranger firefox tree lightdm lightdm-gtk-greeter i3blocks vim-gtk3 gnome-terminal feh mousepad flameshot
             ;;
         *)
             echo "Unsupported package manager."
