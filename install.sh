@@ -31,17 +31,17 @@ install_packages() {
     case "$package_manager" in
         apt)
             apt-get update
-            apt-get install -y i3 i3status i3lock suckless-tools gnome-terminal vim-gtk3
-            apt-get install -y neofetch lolcat lm-sensors ranger gnome-browser-connector tree lightdm lightdm-gtk-greeter i3blocks feh rofi btop mousepad flameshot
+            apt-get install -y i3 i3status i3lock suckless-tools gnome-terminal vim-gtk3 unzip 
+            apt-get install -y neofetch lolcat lm-sensors ranger gnome-browser-connector tree lightdm lightdm-gtk-greeter i3blocks feh rofi btop mousepad flameshot unzip firefox-esr thunar
             apt-get update
             ;;
         pacman)
             pacman -Sy
-            pacman -S --noconfirm i3-wm i3status i3lock suckless-tools neofetch lolcat lm-sensors ranger firefox tree lightdm lightdm-gtk-greeter i3blocks gnome-terminal vim-gtk3 feh rofi btop mousepad flameshot
+            pacman -S --noconfirm i3-wm i3status i3lock suckless-tools neofetch lolcat lm-sensors ranger firefox tree lightdm lightdm-gtk-greeter i3blocks gnome-terminal vim-gtk3 feh rofi btop mousepad flameshot unzip thunar
             pacman -Sy
             ;;
         dnf)
-            dnf install -y i3 i3status i3lock suckless-tools neofetch lolcat lm-sensors ranger firefox tree lightdm lightdm-gtk-greeter i3blocks vim-gtk3 gnome-terminal feh rofi btop mousepad flameshot
+            dnf install -y i3 i3status i3lock suckless-tools neofetch lolcat lm-sensors ranger firefox tree lightdm lightdm-gtk-greeter i3blocks vim-gtk3 gnome-terminal feh rofi btop mousepad flameshot unzip
             ;;
         zypper)
             zypper refresh
@@ -188,10 +188,36 @@ append_custom_vimrc() {
 
 }
 
+
+
+brave_debian() {
+
+    sudo apt install curl
+
+    sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+    echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+    sudo apt update
+
+    sudo apt install brave-browser
+    echo "Brave browser installed successfully."
+}
+
+
+
 # Main script execution
 check_root
 PACKAGE_MANAGER=$(detect_package_manager)
 check_and_install_xserver $PACKAGE_MANAGER
+
+if command -v apt-get &> /dev/null; then
+    echo "apt"
+    brave_debian
+    set_default_browser
+fi
+
+
 install_packages $PACKAGE_MANAGER
 enable_and_start_lightdm
 
@@ -203,6 +229,9 @@ SCRIPT_DIR=$(dirname "$(realpath "$0")")
 replace_configs $SCRIPT_DIR
 append_custom_bashrc
 append_custom_vimrc
+
+
+
 
 echo "Done, please reboot"
 
